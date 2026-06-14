@@ -1,0 +1,30 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: backend
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/short_url
+    username: postgres
+    password: 111
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  task:
+    execution:
+      pool:
+        core-size: 2
+        max-size: 5
+        queue-capacity: 100
+
+jwt:
+  secret: bXlTdXBlclNlY3JldEtleUZvckp3dFRva2VuR2VuZXJhdGlvbjEyMzQ1Njc4OTAxMjM0NTY3OAo=
+  expiration-ms: 86400000
